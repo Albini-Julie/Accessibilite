@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Page d'accueil | Cite du numérique</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+
+<body>
+    <!--Bouton "aller au contenu"-->
+    <a class="evitement" href="#intro">Aller au contenu de la page</a>
+    <div class="header">
+        <!--HEADER-->
+        <header role="banner">
+            <!--Logo-->
+            <a href="/"><img class="header__logo" src="img/logo.png" alt="La Cité du Numérique"/></a>
+        </header>
+        <!--NAVIGATION DESKTOP - QUE DES LIENS INTERNES + STYLE SPECIAL SUR L'ELEMENT COURANT-->
+        <nav role="navigation" aria-label="Menu principal" >
+            <ul class="header__navigation">
+                <li><a class="header__link --link" href="#lieu-unique">Le lieu</a></li>
+                <li><a class="header__link --link" href="#localisation-stratégique">La localisation</a></li>
+                <li><a class="header__link --link" href="#pro-working">Les services</a></li>
+                <li><a class="header__link --link" href="#sa-creation">La création</a></li>
+                <li><a class="header__link --link" href="#cite-images">La galerie</a></li>
+                <li><a class="header__link --link" href="#contact">Contactez-nous</a></li>
+            </ul>
+        </nav>
+        <!--NAVIGATION MOBILE-->
+        <nav role="navigation" aria-label="Menu principal" class="navigation --mobile">
+            <button aria-expanded="true">
+                <svg aria-hidden="true" focusable="false">[…]</svg>
+                Menu
+            </button>
+            <ul class="visible">
+                [Menu de navigation principal]
+            </ul>
+        </nav>
+    </div>
+    <!--CONTENU PRINCIPAL - Penser aux accents sur les majuscules-->
+    <!--ATTENTION : DIFFERENCIER LES LIENS ET LES BOUTONS !-->
+    <main role="main">
+        <!--INTRODUCTION-->
+        <div class="intro" id="intro">
+            <div class="intro__content">
+                <h1 class="intro__title">La cité numérique, le coeur de l'économie numérique de la nouvelle Acquitaine</h1>
+                <a class="intro__link --link" href="#lieu-unique">Découvrez la cité numérique</a>
+            </div>
+            <div class="intro__img">
+                <img src="img/img_intro.jpg" alt=""/>
+            </div>
+        </div>
+        <!--UN LIEU UNIQUE-->
+        <div class="lieu" id="lieu-unique">
+            <img class="lieu__img" src="img/img_lieuunique.jpg" alt=""/>
+            <div class="lieu__content">
+                <h2 class="lieu__title2 --title2">Un lieu unique</h2>
+                <h3 class="lieu_title3 --title3">Au service de l'émulation collective</h3>
+                <p class="lieu__text"><span class="lieu__surligne --surligne">La Cité Numérique est un véritable écosystème qui se déploie sur 3 bâtiments de 25 000 m² et plus de 8 500 m² d’espaces extérieurs.</span></p>
+                <p class="lieu__text">Ayant pour ambition d’être un <span class="lieu__surligne --surligne">accélérateur d’innovations</span> pour les acteurs du digital et imaginée comme un laboratoire de projets économiques, culturels et éducatifs, elle accueille et répond aux besoins de tous les <span class="lieu__surligne --surligne">professionnels de la
+                start-up à la multinationale, du secteur public au secteur privé.</span></p>
+                <p class="lieu__text"><span class="lieu__surligne --surligne">Connectée et ouverte</span>, elle propose une offre de service complète, une grande variété d’espaces de travail et de détente. De plus, un soin particulier a été apporté à la végétalisation offrant ainsi un cadre privilégié aux occupants.</p>
+            </div>
+        </div>
+        <!--UNE LOCALISATION STRATEGIQUE-->
+        <div class="localisation" id="localisation-stratégique">
+            <!--Européenne et nationale-->
+            <div class="localisation__nationale">
+                <div class="localisation__blocimg">
+                    <img class="localisation__img" src="img/img_localisationstrategique.gif" alt="Carte indiquant les temps de trajets entre Bordeaux et différentes villes : Paris, Lyon, Marseille, Milan selon le transport choisi : train ou avion. (description détaillée ci-après)"/>
+                    <button class="localisation__button --button" aria-expanded="true" id="localisation__button">La carte au format texte</button>
+                    <ul class="localisation__aide" id="localisation__aide">
+                        <li class="localisation__puce --puce">Bordeaux - Paris en avion : 1h10</li>
+                        <li class="localisation__puce --puce">Bordeaux - Paris en train : 2H05</li>
+                        <li class="localisation__puce --puce">Bordeaux - Lyon en avion : 1h10</li>
+                        <li class="localisation__puce --puce">Bordeaux - Milan en avion : 1h30</li>
+                        <li class="localisation__puce --puce">Bordeaux - Marseille en avion : 1h10</li>
+                    </ul>
+                </div>
+                <div class="localisation__content">
+                    <h2 class="localisation__title2 --title2">Une localisation stratégique</h2>
+                    <h3 class="localisation__title3 --title3">À l'échelle européenne et nationale</h3>
+                    <p class="localisation__text --text">La Cité Numérique bénéficie d’une localisation idéale pour se déplacer en France et interagir avec les différents pays
+                    d’Europe.</p>
+                    <h4 class="localisation__title4 --title4">Accès en avion</h4>
+                    <p class="localisation__text --text --point">87 destinations nationales et internationales desservies</p>
+                    <h4 class="localisation__title4 --title4">Accès en train</h4>
+                    <p class="localisation__text --text --point">18 aller/retour quotidiens Paris-Bordeaux en 2h05</p>
+                </div>
+            </div>
+            <!--Locale-->
+            <div class="localisation__locale">
+                <div>
+                    <h3 class="localisation__title3 --title3">À l'échelle locale</h3>
+                    <p class="localisation__text --text">Connectée à son environnement et traversée par deux rues intérieures, la Cité Numérique participe à la <span class="localisation__surligne --surligne">redynamisation</span> de son quartier. Proche de la gare de Bordeaux Saint-Jean, elle incarne l’attractivité et le dynamisme économique de la
+                    métropole bordelaise.</p>
+                    <h4 class="localisation__title4 --title4">Accès en transports en commun</h4>
+                    <ul>
+                        <li class="localisation__puce --puce">Tram C – Arrêt Terres Neuves et Belle Rose à 4 min à pied</li>
+                        <li class="localisation__puce --puce">Bus 20 & 86 à 2 min à pied</li>
+                    </ul>
+                    <h4 class="localisation__title4 --title4">Accès par voiture</h4>
+                    <ul>
+                        <li class="localisation__puce --puce">À 10 min de la rocade</li>
+                        <li class="localisation__puce --puce">Parking de 200 places</li>
+                    </ul>
+                    <h4 class="localisation__title4 --title4">Accès par voiture</h4>
+                    <a href="https://www.google.com/maps/place/2+Rue+Marc+Sangnier,+33130+B%C3%A8gles/@44.8130892,-0.5561399,17z/data=!3m1!4b1!4m5!3m4!1s0xd552657be03f165:0x227f5b4a4ee92db7!8m2!3d44.8130854!4d-0.5539512?shorturl=1" class="localisation__link --link" target="_blank" aria-label="Voir l'adresse sur Google map (nouvelle fenêtre)" rel="noreferrer noopener">2 rue Marc Sangnier, 33130 - Bègles</a>
+                </div>
+                <div>
+                    <img src="img/img_carte.jpg" alt="Carte indiquant l'emplacement de la cité du numérique"/>
+                    <button aria-expanded="true" class="localisation__button --button">La carte au format texte</button>
+                    <p>La Cité du numérique se trouve à proximité de la gare Saint-Jean de Bordeaux, dans le boulevard Jean Jacques Bosc. Elle dispose de deux parkings, et est désservie par le bus numéro 26. Non loin du bâtiment se trouve également une station du tram C appelée La Belle Rose</p>
+                </div>
+            </div>
+        </div>
+        <!--UN ESPACE DE PRO WORKING-->
+        <div class="working" id="pro-working">
+            <div>
+                <div>
+                    <h2 class="working__title2 --title2">Un espace de pro <span lang="en">working</span></h2>
+                    <h3 class="working__title3 --title3" lang="en"><a href="https://wellio.com/fr/bordeaux-cite-numerique/" aria-label="Visiter le site Wellio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Wellio by Convivio</a></h3>
+                    <p class="working__text --text">Des bureaux privatifs personnalisables et aménagés, des postes en <span lang="en">coworking</span>, des espaces <span lang="en">event</span> et <span lang="en">meeting</span> pour tous formats de réunion, des « services zones » avec café, snacks et wifi très haut débit, des espaces de convivialité pour se détendre et des évènements ponctuels pour fédérer.</p>
+                </div>
+                <div>
+                    <h2 class="working__title2 --title2">Mais pas que...</h2>
+                    <h3 class="working__title3 --title3">Le service <span lang="en">French Tech</span> Central</h3>
+                    <p class="working__text --text">Accès à tous les services de l’administration, sur le modèle du service proposé à la Station F (Paris)</p>
+                    <h3 class="working__title3 --title3">Un incubateur proposé par Unitec</h3>
+                    <h3 class="working__title3 --title3">Un restaurant</h3>
+                    <h3 class="working__title3 --title3">Une conciergerie</h3>
+                    <div class="working__links">
+                        <a class="working__link --link" href="#contact">Nous contacter</a>
+                        <a class="working__link --link https://wellio.com/fr/bordeaux-cite-numerique/" aria-label="Visiter le site Wellio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Aller sur le site Wellio</a>
+                    </div>
+                </div>
+            </div>
+            <!--CARROUSEL-->
+            <div class="carousel" aria-live="polite">
+                <button aria-label="Retourner à l'image précédente" class="nav-button prev" onclick="prevImage()">&#10094;</button>
+                <img id="mainImage" class="main-image" src="img/carrousel_working/img1.jpg" alt="">
+                <button aria-label="Passer à l'image suivante" class="nav-button next" onclick="nextImage()">&#10095;</button>
+                <div class="thumbnails">
+                    <img src="img/carrousel_working/img1.jpg" alt="" onclick="changeImage(0)" role="tabpanel" aria-roledescription="diapositive" aria-label="1 sur 4">
+                    <img src="img/carrousel_working/img2.jpg" alt="" onclick="changeImage(1)" role="tabpanel" aria-roledescription="diapositive" aria-label="2 sur 4">
+                    <img src="img/carrousel_working/img3.jpg" alt="" onclick="changeImage(2)" role="tabpanel" aria-roledescription="diapositive" aria-label="3 sur 4">
+                    <img src="img/carrousel_working/img4.jpg" alt="" onclick="changeImage(3)" role="tabpanel" aria-roledescription="diapositive" aria-label="4 sur 4">
+                </div>
+            </div>
+            <script>
+                let images = ['img/carrousel_working/img1.jpg', 'img/carrousel_working/img2.jpg', 'img/carrousel_working/img3.jpg', 'img/carrousel_working/img4.jpg'];
+                let currentIndex = 0;
+
+                function changeImage(index) {
+                    currentIndex = index;
+                    document.getElementById('mainImage').src = images[currentIndex];
+                }
+
+                function prevImage() {
+                    currentIndex = (currentIndex - 1 + images.length) % images.length;
+                    document.getElementById('mainImage').src = images[currentIndex];
+                }
+
+                function nextImage() {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    document.getElementById('mainImage').src = images[currentIndex];
+                }
+            </script>
+        </div>
+        <!--LA CITÉ NUMÉRIQUE,UNE DESTINATION QUI SÉDUIT-->
+        <div class="destination" id="destination-séduisante">
+            <h2 class="destination__title2 --title2">La cité du numérique, une destination qui séduit</h2>
+            <p class="destination__text --text">Bordeaux Métropole, Enedis, French Tech, Hello Asso, Onepoint, Maelstrom, Région Nouvelle Aquitaine, Sanofi, ou encore
+            UNITEC ont déjà investi les lieux …</p>
+            <p class="destination__text --text">La Cité Numérique s’adresse aux start-ups, aux incubateurs, aux entreprises référentes du digital… ainsi qu’aux
+            structures publiques.</p>
+            <p class="destination__text --text">Vous souhaitez, vous aussi rejoindre la Cité Numérique ?</p>
+            <a href="">Contactez-nous</a>
+            <img class="destination__img" src="img/img_lieuunique.jpg" alt=""/>
+        </div>
+        <!--SA CREATION-->
+        <div class="creation" id="sa-creation">
+            <div>
+                <h2 class="creation__title2 --title2">SA CRÉATION</h2>
+                <h3 class="creation__title3 --title3">Allier patrimoine et mordernité</h3>
+                <p class="creation__text --text">Portée par l’EPA Bordeaux Euratlantique et imaginée par Bordeaux Métropole en lien étroit avec la Mairie de Bègles et la
+                région Nouvelle Aquitaine, <span class="creation__surligne --surligne">la Cité Numérique c’est une histoire de transformation !</span></p>
+                <p class="creation__text --text">C’est sur le site de l’ancien Tri postal de Bègles que se dresse aujourd’hui la Cité Numérique. Soucieux de conserver
+                l’âme et l’histoire du lieu, l’architecte, <span class="creation__surligne --surligne">Alexandre Chemetoff</span>, a fait de l’existant une force, tout en réinterprétant
+                l’ensemble. Aujourd’hui, le site propose à ses occupants et visiteurs luminosité, grands volumes, connectivité,
+                flexibilité, confort, services, vastes espaces paysagers, … Tout ce qui caractérise un cadre de travail épanouissant et
+                efficient.</p>
+                <p class="creation__text --text">Ainsi, <span class="creation__surligne --surligne">la Cité Numérique est un modèle d’alliance réussie entre l’ancien et le nouveau !</span></p>
+            </div>
+            <div>
+                <img src="img/img_creation.jpg" alt=""/>
+            </div>
+        </div>
+        <!--LES POINTS CLES DU PROJET-->
+        <div class="pointscle" id="points-cles">
+            <div>
+                <h2 class="pointscle__title2 --title2">Les points clés du projet</h2>
+                <ul>
+                    <li class="pointscle__text --text"><span class="pointscle__surligne --surligne">25 000 m² répartis sur 3 bâtiments</span> et plus de 8 500 m² d’espaces extérieurs.</li>
+                    <li class="pointscle__text --text"><span class="pointscle__surligne --surligne">Des surfaces de 50 m² à 2800 m²</span> pour s’adapter à la taille et aux projets de ses occupants.</li>
+                    <li class="pointscle__text --text">Des espaces flexibles et intelligents qui permettent aisément des <span class="pointscle__surligne --surligne">aménagements multi-usages, multi-postures et multi-rythmes.</span></li>
+                    <li class="pointscle__text --text"><span class="pointscle__surligne --surligne">De la transparence et du volume</span> pour une totale fluidité des échanges et toujours plus de modularité.</li>
+                    <li class="pointscle__text --text">3 000 m² d’espace de <span lang="en">pro-working</span> wellio, réseau d’<span class="pointscle__surligne --surligne">espaces flexibles de Covivio</span> et de nombreux autres services</li>
+                    <li class="pointscle__text --text"><span class="pointscle__surligne --surligne">Une labellisation <span lang="en">French Tech</span></span> qui fait du site la référence du digital en région nouvelle aquitaine.</li>
+                </ul>
+            </div>
+            <div>
+                <img src="img/img_pointscles.jpg" alt=""/>
+            </div>
+        </div>
+        <!--LA CITE EN IMAGES-->
+        <div id="cite-images">
+            <h2>La cité en images</h2>
+            <div class="carousel" aria-live="polite">
+                <button aria-label="Retourner à l'image précédente" class="nav-button prev" onclick="prevImage()">&#10094;</button>
+                <img id="mainImage2" class="main-image" src="img/carrousel_citeenimage/img1.jpg" alt="">
+                <button aria-label="Passer à l'image suivante" class="nav-button next" onclick="nextImage()">&#10095;</button>
+                <div class="thumbnails">
+                    <img src="img/carrousel_citeenimage/img1.jpg" alt="" onclick="changeImage(0)" role="tabpanel" aria-roledescription="diapositive" aria-label="1 sur 5">
+                    <img src="img/carrousel_citeenimage/img2.jpg" alt="" onclick="changeImage(1)" role="tabpanel" aria-roledescription="diapositive" aria-label="2 sur 5">
+                    <img src="img/carrousel_citeenimage/img3.jpg" alt="" onclick="changeImage(2)" role="tabpanel" aria-roledescription="diapositive" aria-label="3 sur 5">
+                    <img src="img/carrousel_citeenimage/img4.jpg" alt="" onclick="changeImage(3)" role="tabpanel" aria-roledescription="diapositive" aria-label="4 sur 5">
+                    <img src="img/carrousel_citeenimage/img5.jpg" alt="" onclick="changeImage(4)" role="tabpanel" aria-roledescription="diapositive" aria-label="5 sur 5">
+                </div>
+                <script>
+                    let images2 = ['img/carrousel_citeenimage/img1.jpg', 'img/carrousel_citeenimage/img2.jpg', 'img/carrousel_citeenimage/img3.jpg', 'img/carrousel_citeenimage/img4.jpg', 'img/carrousel_citeenimage/img5.jpg'];
+                    let currentIndex2 = 0;
+
+                    function changeImage(index) {
+                        currentIndex2 = index;
+                        document.getElementById('mainImage2').src = images2[currentIndex2];
+                    }
+
+                    function prevImage() {
+                        currentIndex2 = (currentIndex2 - 1 + images2.length) % images2.length;
+                        document.getElementById('mainImage2').src = images2[currentIndex2];
+                    }
+
+                    function nextImage() {
+                        currentIndex2 = (currentIndex2 + 1) % images2.length;
+                        document.getElementById('mainImage2').src = images2[currentIndex2];
+                    }
+                </script>
+            </div>
+            <!--VIDEOS (description/résumé + video + bouton de transcription + bouton d'audio-description)-->
+            <p></p>
+            <iframe title="Vidéo YouTube : L'accessibilité numérique à toutes les étapes d'un projet" src="https://youtu.be/6iqEX_pGtrw" />
+            <button>Lire la transcription</button>
+            <button>Auto-description</button>
+        </div>
+        <!--VOUS SOUHAITEZ NOUS CONTACTER ?-->
+        <div class="formulaire" id="contact">
+            <h2 class="formulaire__title2 --title2">Vous souhaitez nous contacter ?</h2>
+            <p class="formulaire__text --text">Veuillez remplir le Formulaire ci-dessous</p>
+            <!--FORMULAIRE - Mettre un message de confirmation de l'envoie si possible-->
+            <form>
+                <!--Bien positionner le label à quelques pixels de l'input-->
+                <!--Champs obligatoires clairement indiqués exemple : (obligatoire)-->
+                <!--Mettre des indications claires sur les formats attendus exemple: (8 caractères minimum contenant au moins un chiffre | JJ/MM/AAAA)-->
+                <!--Mettre des messages d'erreur si erreurs dans le formulaire avec suggestions de correction-->
+                <label for="nom" class="formulaire__label">Nom (obligatoire)</label>
+                <input class="formulaire__input" required type="text" id="nom" name="nom" autocomplete="family-name" aria-invalid="true"/>
+                <label for="societe" class="formulaire__label">Société (obligatoire)</label>
+                <input class="formulaire__input" required type="text" id="societe" name="societe" autocomplete="given-name" aria-invalid="true"/>
+                <label for="email" class="formulaire__label">E-mail (obligatoire)</label>
+                <input class="formulaire__input" required type="text" id="email" name="email" autocomplete="email" aria-invalid="true"/>
+                <label for="tel" class="formulaire__label">Téléphone <span>(au format (+33 6 00000000))</span></label>
+                <input class="formulaire__input" type="text" id="tel" name="tel" autocomplete="tel" aria-invalid="true"/>
+                <label for="message" class="formulaire__label">Message</label>
+                <textarea class="formulaire__input" required id="message" name="message" aria-invalid="true"/>
+                <p class="formulaire__text --text">Les données personnelles transmises via le présent formulaire sont collectées par Covivio afin de répondre à votre
+                    demande, et si vous l'acceptez, afin de recevoir nos newsletters. Vous disposez d'un droit d'accès, de
+                    rectification, de
+                    portabilité, d'effacement et de retrait de votre consentement relatif à la collecte de vos données personnelles.
+                    Plus
+                    d'information sur <a href="">politique de traitement des données personnelles</a></p>
+                <label class="formulaire__label" for="legal"></label>
+                <input class="formulaire__input" type="checkbox" id="legal" name="legal" aria-invalid="true"/>
+                <button class="formulaire__button --button">Envoyer le message</button>
+            </form>
+            <p class="formulaire__text --text">Ce traitement a pour but de nous permettre de répondre à votre demande d’information. Après validation du formulaire,
+            les données recueillies sont transmises sur une adresse email interne. La personne qui a accès à cette demande la
+            redirige alors manuellement vers le service concerné. Nous supprimons les données que vous nous avez transmises 6 mois
+            après la clôture de votre demande.</p>
+        </div>
+    </main>
+    <!--FOOTER - PLAN DU SITE OBLIGATOIRE-->
+    <footer role="contentinfo" id="footer">
+        <div class="footer">
+            <img src="img/logo_footer.png" alt="Convivio" />
+            <p>Après des discussions engagées dès 2017, c’est en 2019 que <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> devient propriétaire de 75% des surfaces du site.</p>
+            <p>Fort de son histoire partenariale, de ses expertises immobilières et de sa culture européenne, <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> invente
+            l’expérience utilisateur d’aujourd’hui et dessine la ville de demain. Acteur immobilier de préférence à l’échelle
+            européenne, <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> se rapproche des utilisateurs finaux, capte leurs aspirations, conjugue travailler, voyager,
+            habiter, et coinvente des espaces vivants.</p>
+            <p>Opérateur européen de référence avec plus de 24,8 Md€ de patrimoine <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> accompagne les entreprises, les marques hôtelières et les territoires dans leurs enjeux d’attractivité, de transformation et de performance responsable.</p>
+            <ul>
+                <li class="footer__link --link"><a href="/">Mentions légales</a></li>
+                <li class="footer__link --link"><a href="/">Plan du site</a></li>
+                <li class="footer__link --link"><a href="/">Politque de confidentialite</a></li>
+                <li class="footer__link --link"><a href="/">Politique d'accessibilité</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="/">Crédits</a></li>
+                <li><button class="footer__button --button">Désactiver les transitions du site web</button></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
