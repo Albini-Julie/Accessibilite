@@ -37,6 +37,7 @@ let currentIndex = 0;
 
 const mainImage = document.getElementById("mainImage");
 const pagination = document.getElementById("pagination");
+const carouselWrapper = document.querySelector(".working__carrousel");
 
 function showImage(index) {
   // Met à jour l'image principale
@@ -102,5 +103,49 @@ function createDots() {
   });
 }
 
+let autoplayInterval = null;
+let isAutoplaying = true;
+const autoplayDelay = 4000; // 4 secondes
+
+const autoplayButton = document.getElementById("toggleAutoplay");
+
+// Fonction qui lance l'autoplay
+function startAutoplay() {
+  autoplayInterval = setInterval(() => {
+    nextImage();
+  }, autoplayDelay);
+
+  // Accessibilité : aria-live désactivé pendant l'autoplay
+  carouselWrapper.setAttribute("aria-live", "off");
+
+  autoplayButton.textContent = "Mettre en pause le carrousel";
+  autoplayButton.setAttribute("aria-label", "Mettre en pause le carrousel");
+  autoplayButton.setAttribute("aria-pressed", "true");
+  isAutoplaying = true;
+}
+
+// Fonction qui stoppe l'autoplay
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+
+  // Accessibilité : aria-live réactivé pendant la navigation manuelle
+  carouselWrapper.setAttribute("aria-live", "polite");
+
+  autoplayButton.textContent = "Reprendre la lecture du carrousel";
+  autoplayButton.setAttribute("aria-label", "Reprendre la lecture du carrousel");
+  autoplayButton.setAttribute("aria-pressed", "false");
+  isAutoplaying = false;
+}
+
+// Toggle bouton
+autoplayButton.addEventListener("click", () => {
+  if (isAutoplaying) {
+    stopAutoplay();
+  } else {
+    startAutoplay();
+  }
+});
+
 createDots();
 showImage(currentIndex);
+startAutoplay(); // <= nouvelle ligne

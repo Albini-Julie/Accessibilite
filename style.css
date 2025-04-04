@@ -339,26 +339,31 @@ h3, p, li{
 }
 
 .working__content{
-    width: 45%;
+    width: 40%;
 }
 
 .working__carrousel{
-    width: 55%;
+    width: 60%;
+}
+
+.working__links{
+    display: flex;
+    gap: 2rem;
 }
 
 
 
 /*CARROUSEL*/
- .carousel {
+ .working__carrousel {
      position: relative;
-     width: 600px;
+     width: 55%;
      margin: auto;
      text-align: center;
  }
 
  .carrousel__image {
      width: 100%;
-     max-height: 400px;
+     max-height: 100%;
      object-fit: cover;
  }
 
@@ -378,8 +383,12 @@ h3, p, li{
     transition: right 0.3s ease, color 0.3s ease, left 0.3s ease;
 }
 
+.carrousel__pause{
+    margin-top: 1rem;
+}
+
  .--next:hover{
-    right: -20px;
+    right: -2rem;
  }
 
  .carrousel__button img{
@@ -388,11 +397,11 @@ h3, p, li{
  }
 
  .--prev {
-     left: 5px;
+     left: 0.5rem;
  }
 
   .--prev:hover {
-      left: -20px;
+      left: -2rem;
   }
 
  .--prev img{
@@ -400,13 +409,13 @@ h3, p, li{
  }
 
  .--next {
-     right: 5px;
+     right: 0.5rem;
  }
 
  .carrousel__pagination {
      display: flex;
      justify-content: center;
-     margin-top: 10px;
+     margin-top: 1rem;
  }
 
  .dot {

@@ -121,7 +121,7 @@
             <div class="working__content">
                 <div>
                     <h2 class="working__title2 --title2">Un espace de pro <span lang="en">working</span></h2>
-                    <h3 class="working__title3 --title3" lang="en"><a href="https://wellio.com/fr/bordeaux-cite-numerique/" aria-label="Visiter le site Wellio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Wellio by Convivio</a></h3>
+                    <h3 class="working__title3 --title3 --link" lang="en"><a href="https://wellio.com/fr/bordeaux-cite-numerique/" aria-label="Visiter le site Wellio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Wellio by Convivio</a></h3>
                     <p class="working__text --text">Des bureaux privatifs personnalisables et aménagés, des postes en <span lang="en">coworking</span>, des espaces <span lang="en">event</span> et <span lang="en">meeting</span> pour tous formats de réunion, des « services zones » avec café, snacks et wifi très haut débit, des espaces de convivialité pour se détendre et des évènements ponctuels pour fédérer.</p>
                 </div>
                 <div>
@@ -138,7 +138,7 @@
                 </div>
             </div>
             <!--CARROUSEL-->
-            <div class="working__carrousel carousel" aria-live="polite">
+            <div class="working__carrousel" aria-live="polite">
                 <button aria-label="Retourner à l'image précédente" class="carrousel__button --prev" onclick="prevImage()">
                     <img src="img/icons/arrow.svg" alt="Diapositive précédente" />
                 </button>
@@ -155,6 +155,7 @@
                 </button>
             
                 <div class="caroussel__pagination" id="pagination" role="tablist" aria-label="Diapositives"></div>
+                <button id="toggleAutoplay" aria-pressed="true" aria-label="Mettre en pause le carrousel" class="carrousel__pause --button">Mettre le carrousel en pause</button>
             </div>
         </div>
         <!--LA CITÉ NUMÉRIQUE,UNE DESTINATION QUI SÉDUIT-->
