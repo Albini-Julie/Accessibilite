@@ -55,7 +55,8 @@ body{
     width: 100%;
     overflow-x: hidden;
     font-size: 1em;
-    line-height: 1.5;
+    line-height: 2;
+    margin-bottom: 0;
 }
 
 a{
@@ -351,7 +352,189 @@ h3, p, li{
     gap: 2rem;
 }
 
+/*DESTINATION*/
+.destination{
+    position: relative;
+    padding: 4.5rem 7.5rem;
+    overflow: hidden;
+}
 
+.destination__img{
+    position: absolute;
+    top:50%;
+    transform: translateY(-50%);
+    left:7.5rem;   
+    z-index: -1;
+    aspect-ratio: 859/573;
+}
+
+.destination__content{
+    background-color: #F2F2F2;
+    opacity: 90%;
+    padding: 4rem;
+    padding-top: 2.5rem;
+    width: 40%;
+    margin-left: auto;
+}
+
+.destination__link{
+    background-color: transparent;
+}
+
+/*CREATION*/
+
+.creation{
+    padding: 4.5rem 7.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 3rem;
+}
+
+.creation__content{
+    width: 60%;
+}
+
+.creation__img{
+    width: 40%;
+}
+
+.creation__img img{
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    aspect-ratio: 458/314;
+}
+
+/*LES POINTS CLES DU PROJET*/
+
+.pointscle{
+    background-color: #F2F2F2;
+    padding: 4.5rem 7.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
+.pointscle__content{
+    width: 50%;
+}
+
+.pointscle__img {
+    width: 50%;
+}
+
+.pointscle__img img {
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    aspect-ratio: 550/550;
+}
+
+/*CITE*/
+.cite {
+    background-color: #F2F2F2;
+    padding: 4.5rem 7.5rem;
+}
+
+.video__video{
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1146/647;
+}
+
+/*VIDEO*/
+
+.video{
+    margin-top: 4rem;
+}
+
+.video__buttons{
+    display: flex;
+    gap:1rem
+}
+
+.video__aide{
+    display: none;
+}
+
+/*FORMULAIRE*/
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.formulaire{
+    background-color: #FBFD37;
+    padding: 4.5rem 7.5rem;
+}
+
+.formulaire__content{
+    width: 50%;
+    margin: auto;
+}
+
+.formulaire__title2{
+    text-align: center;
+}
+
+.formulaire__champ{
+    display: flex;
+    flex-direction: column;
+    gap:0.5rem;
+    justify-content: start;
+}
+
+.formulaire__input{
+    padding: 0.5rem;
+}
+
+.--checkbox{
+    flex-direction: row-reverse;
+}
+
+.formulaire__button{
+    margin: auto;
+}
+
+.formulaire__legal{
+    margin-top: 2rem;
+}
+
+/*FOOTER*/
+
+.footer{
+    background-color: #FBFD37;
+
+}
+
+.footer__content{
+    width: 70%;
+    margin: auto;
+}
+
+.footer__logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.footer__link{
+    background-color: transparent;
+}
+
+.footer__navigation{
+    list-style-type: none;
+}
+
+.footer__menu{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
 
 /*CARROUSEL*/
  .working__carrousel {
@@ -364,6 +547,8 @@ h3, p, li{
  .carrousel__image {
      width: 100%;
      max-height: 100%;
+     object-fit: cover;
+     aspect-ratio: 631/420;
      object-fit: cover;
  }
 

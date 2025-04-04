@@ -160,18 +160,20 @@
         </div>
         <!--LA CITÉ NUMÉRIQUE,UNE DESTINATION QUI SÉDUIT-->
         <div class="destination" id="destination-séduisante">
-            <h2 class="destination__title2 --title2">La cité du numérique, une destination qui séduit</h2>
-            <p class="destination__text --text">Bordeaux Métropole, Enedis, French Tech, Hello Asso, Onepoint, Maelstrom, Région Nouvelle Aquitaine, Sanofi, ou encore
-            UNITEC ont déjà investi les lieux …</p>
-            <p class="destination__text --text">La Cité Numérique s’adresse aux start-ups, aux incubateurs, aux entreprises référentes du digital… ainsi qu’aux
-            structures publiques.</p>
-            <p class="destination__text --text">Vous souhaitez, vous aussi rejoindre la Cité Numérique ?</p>
-            <a href="">Contactez-nous</a>
+            <div class="destination__content">
+                <h2 class="destination__title2 --title2">La cité du numérique, une destination qui séduit</h2>
+                <p class="destination__text --text">Bordeaux Métropole, Enedis, French Tech, Hello Asso, Onepoint, Maelstrom, Région Nouvelle Aquitaine, Sanofi, ou encore
+                UNITEC ont déjà investi les lieux …</p>
+                <p class="destination__text --text">La Cité Numérique s’adresse aux start-ups, aux incubateurs, aux entreprises référentes du digital… ainsi qu’aux
+                structures publiques.</p>
+                <p class="destination__text --text">Vous souhaitez, vous aussi rejoindre la Cité Numérique ?</p>
+                <a href="#contact" class="destination__link --link">Contactez-nous</a>
+            </div>
             <img class="destination__img" src="img/img_lieuunique.jpg" alt=""/>
         </div>
         <!--SA CREATION-->
         <div class="creation" id="sa-creation">
-            <div>
+            <div class="creation__content">
                 <h2 class="creation__title2 --title2">SA CRÉATION</h2>
                 <h3 class="creation__title3 --title3">Allier patrimoine et mordernité</h3>
                 <p class="creation__text --text">Portée par l’EPA Bordeaux Euratlantique et imaginée par Bordeaux Métropole en lien étroit avec la Mairie de Bègles et la
@@ -183,13 +185,13 @@
                 efficient.</p>
                 <p class="creation__text --text">Ainsi, <span class="creation__surligne --surligne">la Cité Numérique est un modèle d’alliance réussie entre l’ancien et le nouveau !</span></p>
             </div>
-            <div>
+            <div class="creation__img">
                 <img src="img/img_creation.jpg" alt=""/>
             </div>
         </div>
         <!--LES POINTS CLES DU PROJET-->
         <div class="pointscle" id="points-cles">
-            <div>
+            <div class="pointscle__content">
                 <h2 class="pointscle__title2 --title2">Les points clés du projet</h2>
                 <ul>
                     <li class="pointscle__text --text"><span class="pointscle__surligne --surligne">25 000 m² répartis sur 3 bâtiments</span> et plus de 8 500 m² d’espaces extérieurs.</li>
@@ -200,105 +202,134 @@
                     <li class="pointscle__text --text"><span class="pointscle__surligne --surligne">Une labellisation <span lang="en">French Tech</span></span> qui fait du site la référence du digital en région nouvelle aquitaine.</li>
                 </ul>
             </div>
-            <div>
+            <div class="pointscle__img">
                 <img src="img/img_pointscles.jpg" alt=""/>
             </div>
         </div>
         <!--LA CITE EN IMAGES-->
-        <div id="cite-images">
-            <h2>La cité en images</h2>
-            <div class="carousel" aria-live="polite">
-                <button aria-label="Retourner à l'image précédente" class="nav-button prev" onclick="prevImage()">&#10094;</button>
-                <img id="mainImage2" class="main-image" src="img/carrousel_citeenimage/img1.jpg" alt="">
-                <button aria-label="Passer à l'image suivante" class="nav-button next" onclick="nextImage()">&#10095;</button>
-                <div class="thumbnails">
-                    <img src="img/carrousel_citeenimage/img1.jpg" alt="" onclick="changeImage(0)" role="tabpanel" aria-roledescription="diapositive" aria-label="1 sur 5">
-                    <img src="img/carrousel_citeenimage/img2.jpg" alt="" onclick="changeImage(1)" role="tabpanel" aria-roledescription="diapositive" aria-label="2 sur 5">
-                    <img src="img/carrousel_citeenimage/img3.jpg" alt="" onclick="changeImage(2)" role="tabpanel" aria-roledescription="diapositive" aria-label="3 sur 5">
-                    <img src="img/carrousel_citeenimage/img4.jpg" alt="" onclick="changeImage(3)" role="tabpanel" aria-roledescription="diapositive" aria-label="4 sur 5">
-                    <img src="img/carrousel_citeenimage/img5.jpg" alt="" onclick="changeImage(4)" role="tabpanel" aria-roledescription="diapositive" aria-label="5 sur 5">
-                </div>
-                <script>
-                    let images2 = ['img/carrousel_citeenimage/img1.jpg', 'img/carrousel_citeenimage/img2.jpg', 'img/carrousel_citeenimage/img3.jpg', 'img/carrousel_citeenimage/img4.jpg', 'img/carrousel_citeenimage/img5.jpg'];
-                    let currentIndex2 = 0;
-
-                    function changeImage(index) {
-                        currentIndex2 = index;
-                        document.getElementById('mainImage2').src = images2[currentIndex2];
-                    }
-
-                    function prevImage() {
-                        currentIndex2 = (currentIndex2 - 1 + images2.length) % images2.length;
-                        document.getElementById('mainImage2').src = images2[currentIndex2];
-                    }
-
-                    function nextImage() {
-                        currentIndex2 = (currentIndex2 + 1) % images2.length;
-                        document.getElementById('mainImage2').src = images2[currentIndex2];
-                    }
-                </script>
+        <div class="cite" id="cite-images">
+            <h2 class="cite__title2 --title2">La cité en images</h2>
+            <div class="working__carrousel" aria-live="polite">
+                <button aria-label="Retourner à l'image précédente" class="carrousel__button --prev" onclick="prevImage()">
+                    <img src="img/icons/arrow.svg" alt="Diapositive précédente" />
+                </button>
+            
+                <img id="img1" class="carrousel__image" src="img/carrousel_citeenimage/img1.jpg" alt="" role="tabpanel" aria-roledescription="diapositive">
+                <img id="img2" class="carrousel__image" src="img/carrousel_citeenimage/img2.jpg" alt="" role="tabpanel" aria-roledescription="diapositive">
+                <img id="img3" class="carrousel__image" src="img/carrousel_citeenimage/img3.jpg" alt="" role="tabpanel" aria-roledescription="diapositive">
+                <img id="img4" class="carrousel__image" src="img/carrousel_citeenimage/img4.jpg" alt="" role="tabpanel" aria-roledescription="diapositive">
+                <img id="img5" class="carrousel__image" src="img/carrousel_citeenimage/img5.jpg" alt="" role="tabpanel" aria-roledescription="diapositive">
+                
+            
+                <button aria-label="Passer à l'image suivante" class="carrousel__button --next" onclick="nextImage()">
+                    <img src="img/icons/arrow.svg" alt="Diapositive suivante" />
+                </button>
+            
+                <div class="caroussel__pagination" id="pagination" role="tablist" aria-label="Diapositives"></div>
+                <button id="toggleAutoplay" aria-pressed="true" aria-label="Mettre en pause le carrousel"
+                    class="carrousel__pause --button">Mettre le carrousel en pause</button>
             </div>
             <!--VIDEOS (description/résumé + video + bouton de transcription + bouton d'audio-description)-->
-            <p></p>
-            <iframe title="Vidéo YouTube : L'accessibilité numérique à toutes les étapes d'un projet" src="https://youtu.be/6iqEX_pGtrw" />
-            <button>Lire la transcription</button>
-            <button>Auto-description</button>
+            <div class="video">
+                <iframe class="video__video" title="Vidéo YouTube : L'accessibilité numérique à toutes les étapes d'un projet" src="https://www.youtube.com/embed/6iqEX_pGtrw"></iframe>
+                <p class="video__text --text">©Bordeaux Métropole</p>
+                <p class="video__text --text">Sujet de la vidéo : présentation de Bordeaux métropole, ses projets futurs, notamment en termes de
+                    développement durable, d'économie, d'inclusion sociale et de technologie.</p>
+                <div class="video__buttons">
+                    <div>
+                        <button id="video__button1" class="cite__button --button">Lire la transcription</button>
+                        <p class="video__aide --text" id="video__aide1">*Transcription de la vidéo*</p>
+                    </div>
+                    <div>
+                        <button id="video__button2" class="cite__button --button">Auto-description</button>
+                        <p class="video__aide --text" id="video__aide2">*Description audio de la vidéo*</p>  
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
         <!--VOUS SOUHAITEZ NOUS CONTACTER ?-->
         <div class="formulaire" id="contact">
-            <h2 class="formulaire__title2 --title2">Vous souhaitez nous contacter ?</h2>
-            <p class="formulaire__text --text">Veuillez remplir le Formulaire ci-dessous</p>
-            <!--FORMULAIRE - Mettre un message de confirmation de l'envoie si possible-->
-            <form>
-                <!--Bien positionner le label à quelques pixels de l'input-->
-                <!--Champs obligatoires clairement indiqués exemple : (obligatoire)-->
-                <!--Mettre des indications claires sur les formats attendus exemple: (8 caractères minimum contenant au moins un chiffre | JJ/MM/AAAA)-->
-                <!--Mettre des messages d'erreur si erreurs dans le formulaire avec suggestions de correction-->
-                <label for="nom" class="formulaire__label">Nom (obligatoire)</label>
-                <input class="formulaire__input" required type="text" id="nom" name="nom" autocomplete="family-name" aria-invalid="true"/>
-                <label for="societe" class="formulaire__label">Société (obligatoire)</label>
-                <input class="formulaire__input" required type="text" id="societe" name="societe" autocomplete="given-name" aria-invalid="true"/>
-                <label for="email" class="formulaire__label">E-mail (obligatoire)</label>
-                <input class="formulaire__input" required type="text" id="email" name="email" autocomplete="email" aria-invalid="true"/>
-                <label for="tel" class="formulaire__label">Téléphone <span>(au format (+33 6 00000000))</span></label>
-                <input class="formulaire__input" type="text" id="tel" name="tel" autocomplete="tel" aria-invalid="true"/>
-                <label for="message" class="formulaire__label">Message</label>
-                <textarea class="formulaire__input" required id="message" name="message" aria-invalid="true"/>
-                <p class="formulaire__text --text">Les données personnelles transmises via le présent formulaire sont collectées par Covivio afin de répondre à votre
-                    demande, et si vous l'acceptez, afin de recevoir nos newsletters. Vous disposez d'un droit d'accès, de
-                    rectification, de
-                    portabilité, d'effacement et de retrait de votre consentement relatif à la collecte de vos données personnelles.
-                    Plus
-                    d'information sur <a href="">politique de traitement des données personnelles</a></p>
-                <label class="formulaire__label" for="legal"></label>
-                <input class="formulaire__input" type="checkbox" id="legal" name="legal" aria-invalid="true"/>
-                <button class="formulaire__button --button">Envoyer le message</button>
-            </form>
-            <p class="formulaire__text --text">Ce traitement a pour but de nous permettre de répondre à votre demande d’information. Après validation du formulaire,
-            les données recueillies sont transmises sur une adresse email interne. La personne qui a accès à cette demande la
-            redirige alors manuellement vers le service concerné. Nous supprimons les données que vous nous avez transmises 6 mois
-            après la clôture de votre demande.</p>
+            <div class="formulaire__content">
+                <h2 class="formulaire__title2 --title2">Vous souhaitez nous contacter ?</h2>
+                <h3 class="formulaire__title3 --title3">Veuillez remplir le Formulaire ci-dessous</h3>
+                <!--FORMULAIRE - Mettre un message de confirmation de l'envoie si possible-->
+                <form>
+                    <!--Bien positionner le label à quelques pixels de l'input-->
+                    <!--Champs obligatoires clairement indiqués exemple : (obligatoire)-->
+                    <!--Mettre des indications claires sur les formats attendus exemple: (8 caractères minimum contenant au moins un chiffre | JJ/MM/AAAA)-->
+                    <!--Mettre des messages d'erreur si erreurs dans le formulaire avec suggestions de correction-->
+                    <div class="formulaire__champ">
+                        <label for="nom" class="formulaire__label">Nom (obligatoire)</label>
+                        <input class="formulaire__input" required type="text" id="nom" name="nom" autocomplete="family-name" />
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="formulaire__champ">
+                        <label for="societe" class="formulaire__label">Société (obligatoire)</label>
+                        <input class="formulaire__input" required type="text" id="societe" name="societe" autocomplete="organization" />
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="formulaire__champ">
+                        <label for="email" class="formulaire__label">E-mail (obligatoire)</label>
+                        <input class="formulaire__input" required type="email" id="email" name="email" autocomplete="email" />
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="formulaire__champ">
+                        <label for="tel" class="formulaire__label">Téléphone (au format +33 6 00000000)</label>
+                        <input class="formulaire__input" type="text" id="tel" name="tel" autocomplete="tel" />
+                        <span class="error-message"></span>
+                    </div>
+                    
+                    <div class="formulaire__champ">
+                        <label for="message" class="formulaire__label">Message (obligatoire)</label>
+                        <textarea class="formulaire__input" required id="message" name="message"></textarea>
+                        <span class="error-message"></span>
+                    </div>
+                    <p class="formulaire__text --text">Les données personnelles transmises via le présent formulaire sont collectées par Covivio afin de répondre à votre
+                        demande, et si vous l'acceptez, afin de recevoir nos newsletters. Vous disposez d'un droit d'accès, de
+                        rectification, de
+                        portabilité, d'effacement et de retrait de votre consentement relatif à la collecte de vos données personnelles.
+                        Plus
+                        d'information sur <a href="">politique de traitement des données personnelles</a></p>
+                    <div class="formulaire__champ --checkbox">
+                        <label class="formulaire__label" for="legal">J’accepte de recevoir la newsletter</label>
+                        <input class="formulaire__input" type="checkbox" id="legal" name="legal" aria-invalid="true"/>
+                    </div>
+                    <button class="formulaire__button --button">Envoyer le message</button>
+                </form>
+                <p class="formulaire__legal --text">Ce traitement a pour but de nous permettre de répondre à votre demande d’information. Après validation du formulaire,
+                les données recueillies sont transmises sur une adresse email interne. La personne qui a accès à cette demande la
+                redirige alors manuellement vers le service concerné. Nous supprimons les données que vous nous avez transmises 6 mois
+                après la clôture de votre demande.</p>
+            </div>
         </div>
     </main>
     <!--FOOTER - PLAN DU SITE OBLIGATOIRE-->
     <footer role="contentinfo" id="footer">
         <div class="footer">
-            <img src="img/logo_footer.png" alt="Convivio" />
-            <p>Après des discussions engagées dès 2017, c’est en 2019 que <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> devient propriétaire de 75% des surfaces du site.</p>
-            <p>Fort de son histoire partenariale, de ses expertises immobilières et de sa culture européenne, <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> invente
-            l’expérience utilisateur d’aujourd’hui et dessine la ville de demain. Acteur immobilier de préférence à l’échelle
-            européenne, <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> se rapproche des utilisateurs finaux, capte leurs aspirations, conjugue travailler, voyager,
-            habiter, et coinvente des espaces vivants.</p>
-            <p>Opérateur européen de référence avec plus de 24,8 Md€ de patrimoine <a aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> accompagne les entreprises, les marques hôtelières et les territoires dans leurs enjeux d’attractivité, de transformation et de performance responsable.</p>
-            <ul>
-                <li class="footer__link --link"><a href="/">Mentions légales</a></li>
-                <li class="footer__link --link"><a href="/">Plan du site</a></li>
-                <li class="footer__link --link"><a href="/">Politque de confidentialite</a></li>
-                <li class="footer__link --link"><a href="/">Politique d'accessibilité</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="/">Crédits</a></li>
-                <li><button class="footer__button --button">Désactiver les transitions du site web</button></li>
-            </ul>
+            <div class="footer__content">
+                <div class="footer__logo" >
+                    <img  src="img/logo_footer.png" alt="Convivio" />
+                </div>
+                <p>Après des discussions engagées dès 2017, c’est en 2019 que <a  class="footer__link --link" aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> devient propriétaire de 75% des surfaces du site.</p>
+                <p>Fort de son histoire partenariale, de ses expertises immobilières et de sa culture européenne, <a  class="footer__link --link" aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> invente
+                l’expérience utilisateur d’aujourd’hui et dessine la ville de demain. Acteur immobilier de préférence à l’échelle
+                européenne, <a  class="footer__link --link" aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> se rapproche des utilisateurs finaux, capte leurs aspirations, conjugue travailler, voyager,
+                habiter, et coinvente des espaces vivants.</p>
+                <p>Opérateur européen de référence avec plus de 24,8 Md€ de patrimoine <a  class="footer__link --link" aria-label="Aller sur le site Covivio" href="https://www.covivio.eu/fr/" aria-label="Visiter le site Covivio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Covivio</a> accompagne les entreprises, les marques hôtelières et les territoires dans leurs enjeux d’attractivité, de transformation et de performance responsable.</p>
+            </div>
+            <ul class="footer__menu">
+                    <li class="footer__navigation"><a class="footer__link --link" href="/">Mentions légales</a></li>
+                    <li class="footer__navigation"><a class="footer__link --link" href="/">Plan du site</a></li>
+                    <li class="footer__navigation"><a  class="footer__link --link" href="/">Politque de confidentialite</a></li>
+                    <li class="footer__navigation"><a  class="footer__link --link" href="/">Politique d'accessibilité</a></li>
+                    <li class="footer__navigation"><a  class="footer__link --link" href="#contact">Contact</a></li>
+                    <li class="footer__navigation"><a  class="footer__link --link" href="/">Crédits</a></li>
+                    <li class="footer__navigation"><button class="footer__button --button">Désactiver les transitions du site web</button></li>
+                </ul>
         </div>
     </footer>
 </body>

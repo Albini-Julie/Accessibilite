@@ -2,150 +2,178 @@ const localisation__button = document.getElementById('localisation__button');
 const localisation__aide = document.getElementById('localisation__aide');
 
 // Afficher le canvas lorsque le bouton "Valider" est cliqué
-localisation__button.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    if (localisation__aide.style.display === 'block'){
-        localisation__aide.style.display = 'none'; 
-    }
-    else{
-        localisation__aide.style.display = 'block'; 
-    }
-});
+function toggleDisplay(buttonId, contentId) {
+    const button = document.getElementById(buttonId);
+    const content = document.getElementById(contentId);
 
-const localisation__button2 = document.getElementById('localisation__button2');
-const localisation__aide2 = document.getElementById('localisation__aide2');
+    button.addEventListener('click', (event) => {
+        event.preventDefault(); 
+        // Vérifie si l'élément est visible et alterne l'affichage
+        if (content.style.display === 'block'){
+            content.style.display = 'none'; 
+        }
+        else{
+            content.style.display = 'block'; 
+        }
+    });
+}
 
-// Afficher le canvas lorsque le bouton "Valider" est cliqué
-localisation__button2.addEventListener('click', (event) => {
-    event.preventDefault(); 
-    if (localisation__aide2.style.display === 'block'){
-        localisation__aide2.style.display = 'none'; 
-    }
-    else{
-        localisation__aide2.style.display = 'block'; 
-    }
-});
+toggleDisplay('localisation__button', 'localisation__aide');
+toggleDisplay('localisation__button2', 'localisation__aide2');
+toggleDisplay('video__button1', 'video__aide1');
+toggleDisplay('video__button2', 'video__aide2');
 
 // Carrousel
-const images = [
-  "img/carrousel_working/img1.jpg",
-  "img/carrousel_working/img2.jpg",
-  "img/carrousel_working/img3.jpg"
-];
+document.querySelectorAll('.working__carrousel').forEach((carousel) => {
+    const images = Array.from(carousel.querySelectorAll('.carrousel__image'));
+    const pagination = carousel.querySelector('.caroussel__pagination');
+    const autoplayButton = carousel.querySelector('.carrousel__pause');
+    const prevButton = carousel.querySelector('.--prev');
+    const nextButton = carousel.querySelector('.--next');
 
-let currentIndex = 0;
+    let currentIndex = 0;
+    let autoplayInterval = null;
+    let isAutoplaying = true;
+    const autoplayDelay = 4000;
 
-const mainImage = document.getElementById("mainImage");
-const pagination = document.getElementById("pagination");
-const carouselWrapper = document.querySelector(".working__carrousel");
+    function showImage(index) {
+        images.forEach((img, i) => {
+            img.style.display = i === index ? 'block' : 'none';
+            img.setAttribute("aria-label", `${i + 1} sur ${images.length}`);
+        });
 
-function showImage(index) {
-  // Met à jour l'image principale
-  const allImages = document.querySelectorAll(".carrousel__image");
+        updateDots(index);
+    }
 
-  // Cache toutes les images
-  allImages.forEach(img => img.style.display = "none");
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
+    }
 
-  // Affiche l'image active
-  allImages[index].style.display = "block";
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
+    }
 
-  // Met à jour l'aria-label pour chaque image
-  allImages.forEach((img, idx) => {
-    img.setAttribute("aria-label", `${idx + 1} sur ${images.length}`);
-  });
+    function updateDots(index) {
+        const dots = pagination.querySelectorAll('.dot');
+        dots.forEach((dot, i) => {
+            const isActive = i === index;
+            dot.classList.toggle('active', isActive);
+            dot.setAttribute("aria-selected", isActive ? "true" : "false");
+            dot.setAttribute("tabindex", isActive ? "0" : "-1");
+        });
+    }
 
-  // Met à jour la pagination des points
-  updateDots(index);
-}
+    function createDots() {
+        pagination.innerHTML = '';
+        pagination.setAttribute("role", "tablist");
 
-function nextImage() {
-  currentIndex = (currentIndex + 1) % images.length;
-  showImage(currentIndex);
-}
+        images.forEach((img, i) => {
+            const dot = document.createElement('button');
+            dot.classList.add('dot');
+            dot.setAttribute("role", "tab");
+            dot.setAttribute("aria-label", `Aller à la diapositive ${i + 1}`);
+            dot.setAttribute("aria-controls", img.id);
+            dot.setAttribute("aria-selected", i === currentIndex ? "true" : "false");
+            dot.setAttribute("tabindex", i === currentIndex ? "0" : "-1");
 
-function prevImage() {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  showImage(currentIndex);
-}
+            if (i === currentIndex) dot.classList.add("active");
 
-function updateDots(index) {
-  const dots = document.querySelectorAll(".dot");
-  dots.forEach((dot, idx) => {
-    const isActive = idx === index;
-    dot.classList.toggle("active", isActive);
-    dot.setAttribute("aria-selected", isActive ? "true" : "false");
-    dot.setAttribute("tabindex", isActive ? "0" : "-1");
-  });
-}
+            dot.addEventListener('click', () => {
+                currentIndex = i;
+                showImage(currentIndex);
+            });
 
-function createDots() {
-  pagination.setAttribute("role", "tablist");
+            pagination.appendChild(dot);
+        });
+    }
 
-  images.forEach((_, idx) => {
-    const dot = document.createElement("button");
-    dot.classList.add("dot");
-    dot.setAttribute("role", "tab");
-    dot.setAttribute("aria-label", `Aller à la diapositive ${idx + 1}`);
-    dot.setAttribute("aria-selected", idx === currentIndex ? "true" : "false");
-    dot.setAttribute("tabindex", idx === currentIndex ? "0" : "-1");
+    function startAutoplay() {
+        autoplayInterval = setInterval(nextImage, autoplayDelay);
+        carousel.setAttribute("aria-live", "off");
 
-    // Associer le bouton de pagination à la diapositive via aria-controls
-    dot.setAttribute("aria-controls", `img${idx + 1}`);  // L'ID de la diapositive
+        autoplayButton.textContent = "Mettre le carrousel en pause";
+        autoplayButton.setAttribute("aria-label", "Mettre le carrousel en pause");
+        autoplayButton.setAttribute("aria-pressed", "true");
 
-    if (idx === currentIndex) dot.classList.add("active");
+        isAutoplaying = true;
+    }
 
-    dot.addEventListener("click", () => {
-      currentIndex = idx;
-      showImage(currentIndex);
+    function stopAutoplay() {
+        clearInterval(autoplayInterval);
+        carousel.setAttribute("aria-live", "polite");
+
+        autoplayButton.textContent = "Reprendre la lecture du carrousel";
+        autoplayButton.setAttribute("aria-label", "Reprendre la lecture du carrousel");
+        autoplayButton.setAttribute("aria-pressed", "false");
+
+        isAutoplaying = false;
+    }
+
+    autoplayButton.addEventListener('click', () => {
+        isAutoplaying ? stopAutoplay() : startAutoplay();
     });
 
-    pagination.appendChild(dot);
-  });
-}
+    prevButton.addEventListener('click', prevImage);
+    nextButton.addEventListener('click', nextImage);
 
-let autoplayInterval = null;
-let isAutoplaying = true;
-const autoplayDelay = 4000; // 4 secondes
-
-const autoplayButton = document.getElementById("toggleAutoplay");
-
-// Fonction qui lance l'autoplay
-function startAutoplay() {
-  autoplayInterval = setInterval(() => {
-    nextImage();
-  }, autoplayDelay);
-
-  // Accessibilité : aria-live désactivé pendant l'autoplay
-  carouselWrapper.setAttribute("aria-live", "off");
-
-  autoplayButton.textContent = "Mettre en pause le carrousel";
-  autoplayButton.setAttribute("aria-label", "Mettre en pause le carrousel");
-  autoplayButton.setAttribute("aria-pressed", "true");
-  isAutoplaying = true;
-}
-
-// Fonction qui stoppe l'autoplay
-function stopAutoplay() {
-  clearInterval(autoplayInterval);
-
-  // Accessibilité : aria-live réactivé pendant la navigation manuelle
-  carouselWrapper.setAttribute("aria-live", "polite");
-
-  autoplayButton.textContent = "Reprendre la lecture du carrousel";
-  autoplayButton.setAttribute("aria-label", "Reprendre la lecture du carrousel");
-  autoplayButton.setAttribute("aria-pressed", "false");
-  isAutoplaying = false;
-}
-
-// Toggle bouton
-autoplayButton.addEventListener("click", () => {
-  if (isAutoplaying) {
-    stopAutoplay();
-  } else {
+    // Init
+    createDots();
+    showImage(currentIndex);
     startAutoplay();
-  }
 });
 
-createDots();
-showImage(currentIndex);
-startAutoplay(); // <= nouvelle ligne
+
+// Formulaire 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector("form");
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phonePattern = /^\+33\s[67]\s\d{8}$/; // Format : +33 6 00000000
+
+    function validateField(field) {
+        const errorMessage = field.parentElement.querySelector(".error-message"); // Assure qu'on sélectionne le bon message d'erreur
+        let isValid = true;
+
+        // Réinitialisation
+        errorMessage.textContent = "";
+        field.style.border = "1px solid #ccc";
+
+        if (field.hasAttribute("required") && field.value.trim() === "") {
+            errorMessage.textContent = "Ce champ est obligatoire.";
+            field.style.border = "2px solid red";
+            isValid = false;
+        } else if (field.id === "email" && !emailPattern.test(field.value.trim())) {
+            errorMessage.textContent = "Veuillez entrer une adresse email valide (ex: exemple@mail.com).";
+            field.style.border = "2px solid red";
+            isValid = false;
+        } else if (field.id === "tel" && field.value.trim() !== "" && !phonePattern.test(field.value.trim())) {
+            errorMessage.textContent = "Le format du numéro doit être : +33 6 00000000.";
+            field.style.border = "2px solid red";
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    form.addEventListener("submit", function (event) {
+        let isValid = true;
+        const fields = form.querySelectorAll(".formulaire__input");
+
+        fields.forEach(field => {
+            if (!validateField(field)) {
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
+            event.preventDefault(); // Empêche l'envoi du formulaire en cas d'erreurs
+        }
+    });
+
+    // Vérification en temps réel
+    const fields = form.querySelectorAll(".formulaire__input");
+    fields.forEach(field => {
+        field.addEventListener("input", () => validateField(field));
+    });
+});
