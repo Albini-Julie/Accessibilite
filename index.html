@@ -92,7 +92,7 @@
             </div>
             <!--Locale-->
             <div class="localisation__locale">
-                <div>
+                <div class="localisation__content2">
                     <h3 class="localisation__title3 --title3">À l'échelle locale</h3>
                     <p class="localisation__text --text">Connectée à son environnement et traversée par deux rues intérieures, la Cité Numérique participe à la <span class="localisation__surligne --surligne">redynamisation</span> de son quartier. Proche de la gare de Bordeaux Saint-Jean, elle incarne l’attractivité et le dynamisme économique de la
                     métropole bordelaise.</p>
@@ -109,16 +109,16 @@
                     <h4 class="localisation__title4 --title4">Accès par voiture</h4>
                     <a href="https://www.google.com/maps/place/2+Rue+Marc+Sangnier,+33130+B%C3%A8gles/@44.8130892,-0.5561399,17z/data=!3m1!4b1!4m5!3m4!1s0xd552657be03f165:0x227f5b4a4ee92db7!8m2!3d44.8130854!4d-0.5539512?shorturl=1" class="localisation__link --link" target="_blank" aria-label="Voir l'adresse sur Google map (nouvelle fenêtre)" rel="noreferrer noopener">2 rue Marc Sangnier, 33130 - Bègles</a>
                 </div>
-                <div>
-                    <img src="img/img_carte.jpg" alt="Carte indiquant l'emplacement de la cité du numérique"/>
-                    <button aria-expanded="true" class="localisation__button --button">La carte au format texte</button>
-                    <p>La Cité du numérique se trouve à proximité de la gare Saint-Jean de Bordeaux, dans le boulevard Jean Jacques Bosc. Elle dispose de deux parkings, et est désservie par le bus numéro 26. Non loin du bâtiment se trouve également une station du tram C appelée La Belle Rose</p>
+                <div class="localisation__blocimg2">
+                    <img class="localisation__img2" src="img/img_carte.jpg" alt="Carte indiquant l'emplacement de la cité du numérique"/>
+                    <button id="localisation__button2" aria-expanded="true" class="localisation__button --button">La carte au format texte</button>
+                    <p id="localisation__aide2" class="localisation__aide --text">La Cité du numérique se trouve à proximité de la gare Saint-Jean de Bordeaux, dans le boulevard Jean Jacques Bosc. Elle dispose de deux parkings, et est désservie par le bus numéro 26. Non loin du bâtiment se trouve également une station du tram C appelée La Belle Rose.</p>
                 </div>
             </div>
         </div>
         <!--UN ESPACE DE PRO WORKING-->
         <div class="working" id="pro-working">
-            <div>
+            <div class="working__content">
                 <div>
                     <h2 class="working__title2 --title2">Un espace de pro <span lang="en">working</span></h2>
                     <h3 class="working__title3 --title3" lang="en"><a href="https://wellio.com/fr/bordeaux-cite-numerique/" aria-label="Visiter le site Wellio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Wellio by Convivio</a></h3>
@@ -133,41 +133,29 @@
                     <h3 class="working__title3 --title3">Une conciergerie</h3>
                     <div class="working__links">
                         <a class="working__link --link" href="#contact">Nous contacter</a>
-                        <a class="working__link --link https://wellio.com/fr/bordeaux-cite-numerique/" aria-label="Visiter le site Wellio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Aller sur le site Wellio</a>
+                        <a class="working__link --link" href="https://wellio.com/fr/bordeaux-cite-numerique/" aria-label="Visiter le site Wellio (nouvelle fenêtre)" rel="noreferrer noopener" target="_blank">Aller sur le site Wellio</a>
                     </div>
                 </div>
             </div>
             <!--CARROUSEL-->
-            <div class="carousel" aria-live="polite">
-                <button aria-label="Retourner à l'image précédente" class="nav-button prev" onclick="prevImage()">&#10094;</button>
-                <img id="mainImage" class="main-image" src="img/carrousel_working/img1.jpg" alt="">
-                <button aria-label="Passer à l'image suivante" class="nav-button next" onclick="nextImage()">&#10095;</button>
-                <div class="thumbnails">
-                    <img src="img/carrousel_working/img1.jpg" alt="" onclick="changeImage(0)" role="tabpanel" aria-roledescription="diapositive" aria-label="1 sur 4">
-                    <img src="img/carrousel_working/img2.jpg" alt="" onclick="changeImage(1)" role="tabpanel" aria-roledescription="diapositive" aria-label="2 sur 4">
-                    <img src="img/carrousel_working/img3.jpg" alt="" onclick="changeImage(2)" role="tabpanel" aria-roledescription="diapositive" aria-label="3 sur 4">
-                    <img src="img/carrousel_working/img4.jpg" alt="" onclick="changeImage(3)" role="tabpanel" aria-roledescription="diapositive" aria-label="4 sur 4">
-                </div>
+            <div class="working__carrousel carousel" aria-live="polite">
+                <button aria-label="Retourner à l'image précédente" class="carrousel__button --prev" onclick="prevImage()">
+                    <img src="img/icons/arrow.svg" alt="Diapositive précédente" />
+                </button>
+            
+                <img id="img1" class="carrousel__image" src="img/carrousel_working/img1.jpg" alt="" role="tabpanel"
+                    aria-roledescription="diapositive">
+                <img id="img2" class="carrousel__image" src="img/carrousel_working/img2.jpg" alt="" role="tabpanel"
+                    aria-roledescription="diapositive">
+                <img id="img3" class="carrousel__image" src="img/carrousel_working/img3.jpg" alt="" role="tabpanel"
+                    aria-roledescription="diapositive">
+            
+                <button aria-label="Passer à l'image suivante" class="carrousel__button --next" onclick="nextImage()">
+                    <img src="img/icons/arrow.svg" alt="Diapositive suivante" />
+                </button>
+            
+                <div class="caroussel__pagination" id="pagination" role="tablist" aria-label="Diapositives"></div>
             </div>
-            <script>
-                let images = ['img/carrousel_working/img1.jpg', 'img/carrousel_working/img2.jpg', 'img/carrousel_working/img3.jpg', 'img/carrousel_working/img4.jpg'];
-                let currentIndex = 0;
-
-                function changeImage(index) {
-                    currentIndex = index;
-                    document.getElementById('mainImage').src = images[currentIndex];
-                }
-
-                function prevImage() {
-                    currentIndex = (currentIndex - 1 + images.length) % images.length;
-                    document.getElementById('mainImage').src = images[currentIndex];
-                }
-
-                function nextImage() {
-                    currentIndex = (currentIndex + 1) % images.length;
-                    document.getElementById('mainImage').src = images[currentIndex];
-                }
-            </script>
         </div>
         <!--LA CITÉ NUMÉRIQUE,UNE DESTINATION QUI SÉDUIT-->
         <div class="destination" id="destination-séduisante">

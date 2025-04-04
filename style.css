@@ -63,7 +63,7 @@ a{
     color:inherit
 }
 
-h3, p{
+h3, p, li{
     margin-bottom: 2.25rem;
 }
 
@@ -287,8 +287,19 @@ h3, p{
     gap:10rem;
 }
 
+.localisation__locale{
+    margin-top: 7rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+}
+
 .localisation__blocimg{
     width: 55%;
+}
+
+.localisation__blocimg2 {
+    width: 50%;
 }
 
 .localisation__img{
@@ -298,67 +309,119 @@ h3, p{
     aspect-ratio: 1 / 1;
 }
 
+.localisation__img2{
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    aspect-ratio: auto 2500 / 1858;
+}
+
 .localisation__content{
     width: 45%;
+}
+
+.localisation__content2 {
+    width: 50%;
 }
 
 .localisation__aide{
     display: none;
 }
 
-/*CARROUSEL*/
-.carousel {
-    text-align: center;
-    position: relative;
-}
+/*PRO-WORKING*/
 
-.main-image {
-    width: 500px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.thumbnails {
+.working{
     display: flex;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 4.5rem 7.5rem;
+    background-color: white;
 }
 
-.thumbnails img {
-    width: 80px;
-    height: 50px;
-    object-fit: cover;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: transform 0.3s;
+.working__content{
+    width: 45%;
 }
 
-.thumbnails img:hover {
-    transform: scale(1.1);
+.working__carrousel{
+    width: 55%;
 }
 
-.nav-button {
+
+
+/*CARROUSEL*/
+ .carousel {
+     position: relative;
+     width: 600px;
+     margin: auto;
+     text-align: center;
+ }
+
+ .carrousel__image {
+     width: 100%;
+     max-height: 400px;
+     object-fit: cover;
+ }
+
+ .carrousel__button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
+    background-color: white;
+    border: solid 0.1rem black;
+    border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
+    width: fit-content;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1rem;
+    transition: right 0.3s ease, color 0.3s ease, left 0.3s ease;
 }
 
-.prev {
-    left: -50px;
-}
+ .--next:hover{
+    right: -20px;
+ }
 
-.next {
-    right: -50px;
-}
+ .carrousel__button img{
+    width: 1rem;
+    height: 1rem;
+ }
+
+ .--prev {
+     left: 5px;
+ }
+
+  .--prev:hover {
+      left: -20px;
+  }
+
+ .--prev img{
+    transform: rotate(180deg);
+ }
+
+ .--next {
+     right: 5px;
+ }
+
+ .carrousel__pagination {
+     display: flex;
+     justify-content: center;
+     margin-top: 10px;
+ }
+
+ .dot {
+     height: 1rem;
+     width: 1rem;
+     margin: 0 0.3rem;
+     background-color: white;
+     border-radius: 50%;
+     display: inline-block;
+     cursor: pointer;
+ }
+
+.dot.active {
+     background-color: black;
+ }
 
 /*Bien utilisé des rem*/
 @media (max-width: 25rem) {
