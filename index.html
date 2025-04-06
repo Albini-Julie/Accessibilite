@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page d'accueil | Cite du numérique</title>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="script.js" defer></script>
@@ -19,24 +20,35 @@
         </header>
         <!--NAVIGATION DESKTOP - QUE DES LIENS INTERNES + STYLE SPECIAL SUR L'ELEMENT COURANT-->
         <nav role="navigation" aria-label="Menu principal" >
-            <ul class="header__navigation">
-                <li><a class="header__link --link" href="#lieu-unique">Le lieu</a></li>
-                <li><a class="header__link --link" href="#localisation-stratégique">La localisation</a></li>
-                <li><a class="header__link --link" href="#pro-working">Les services</a></li>
-                <li><a class="header__link --link" href="#sa-creation">La création</a></li>
-                <li><a class="header__link --link" href="#cite-images">La galerie</a></li>
-                <li><a class="header__link --link" href="#contact">Contactez-nous</a></li>
+            <ul class="header__navigation --desktop">
+                <li><a id="menu-lieu-unique" class="header__link --link" href="#lieu-unique">Le lieu</a></li>
+                <li><a id="menu-localisation" class="header__link --link" href="#localisation-stratégique">La localisation</a></li>
+                <li><a id="menu-services" class="header__link --link" href="#pro-working">Les services</a></li>
+                <li><a id="menu-creation" class="header__link --link" href="#sa-creation">La création</a></li>
+                <li><a id="menu-galerie" class="header__link --link" href="#cite-images">La galerie</a></li>
+                <li><a id="menu-contact" class="header__link --link" href="#contact">Contactez-nous</a></li>
             </ul>
         </nav>
         <!--NAVIGATION MOBILE-->
         <nav role="navigation" aria-label="Menu principal" class="navigation --mobile">
-            <button aria-expanded="true">
-                <svg aria-hidden="true" focusable="false">[…]</svg>
-                Menu
+            <button class="header__button" aria-expanded="false" aria-hidden="true" id="header-button">
+                <img class="header__icons" aria-hidden="true" focusable="false" alt="Menu" src="img/icons/menu.svg"/>
             </button>
-            <ul class="visible">
-                [Menu de navigation principal]
-            </ul>
+            <div id="header-content" aria-hidden="true" class="header__navigation --mobile">
+                <div class="header__blocbutton">
+                    <button class="header__button" aria-expanded="true" id="header-croix">
+                        <img class="header__icons" aria-hidden="true" focusable="false" alt="Fermer le menu" src="img/icons/croix.svg" />
+                    </button>
+                </div>
+                <ul>
+                    <li><a class="header__link --link --mobile" href="#lieu-unique">Le lieu</a></li>
+                    <li><a class="header__link --link --mobile" href="#localisation-stratégique">La localisation</a></li>
+                    <li><a class="header__link --link --mobile" href="#pro-working">Les services</a></li>
+                    <li><a class="header__link --link --mobile" href="#sa-creation">La création</a></li>
+                    <li><a class="header__link --link --mobile" href="#cite-images">La galerie</a></li>
+                    <li><a class="header__link --link --mobile" href="#contact">Contactez-nous</a></li>
+                </ul>
+            </div>
         </nav>
     </div>
     <!--CONTENU PRINCIPAL - Penser aux accents sur les majuscules-->

@@ -266,6 +266,7 @@ h3, p, li{
     justify-content: space-between;
     gap:2rem;
     margin-bottom: 4.5rem;
+
 }
 
 .lieu__content{
@@ -518,7 +519,7 @@ form{
 .footer__logo{
     display: flex;
     justify-content: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .footer__link{
@@ -617,9 +618,239 @@ form{
      background-color: black;
  }
 
-/*Bien utilisé des rem*/
-@media (max-width: 25rem) {
-    nav li.tile {
-        width: 33%;
+/*MOBILE*/
+@media (max-width: 32rem) {
+    h1{font-size: 1.8em;}
+    h2{font-size: 1.7em;}
+    h3{font-size: 1.6em;}
+    h4{font-size: 1.5em;}
+    body{
+        line-height: 1.5;
+        position: relative;
+        margin: 0;
+    }
+    h3, p, li {
+        margin-bottom: 1.7rem;
+    }
+
+    .--button {
+        padding: 0.5rem 1rem;
+    }
+
+    .header__link:hover, .header__link:focus{
+        color:black;
+        border-color: black;
+    }
+
+    /*HEADER*/
+    .header{
+        padding: 1rem;
+    }
+
+    .header__logo{
+        width: 6rem;
+    }
+
+    .header__button{
+        background-color: transparent;
+        border: none;
+        padding: 0;
+    }
+
+    .header__blocbutton{
+        display: flex;
+        justify-content: end;
+    }
+
+    .header__icons{
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .header__link.--link.--mobile{
+       display: block;
+       background-color: transparent;
+    }
+
+    .--desktop{
+        display: none;
+    }
+
+    .navigation.--mobile{
+        display: block;
+    }
+
+    .header__navigation.--mobile li{
+        list-style: none;
+    }
+
+    .header__navigation.--mobile ul {
+        padding-inline-start: 0;
+    }
+
+    .header__navigation.--mobile{
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: 100%;
+        background-color: #FBFD37;
+        padding: 1rem;
+        overflow: hidden;
+    }
+
+    .--croix{
+        margin: auto;
+    }
+
+    /*CARROUSEL*/
+    .carrousel__button {
+        top:40%;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .--next:hover {
+        right: 0.5rem;
+    }
+
+    .--prev:hover {
+        left: 0.5rem;
+    }
+
+    /*INTRO*/
+    .intro__content{
+        width: 95%;
+        height: 100%;
+    }
+
+    .intro__title{
+        margin-bottom: 0.5rem;
+    }
+
+    .intro__link{
+        font-size: 1.3em;
+    }
+
+    /*LIEU*/
+
+    .lieu{
+        flex-wrap: wrap;
+        padding: 1rem;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    .lieu__img, .lieu__content{
+        width: 100%;
+    }
+
+    /*LOCALISATION*/
+    .localisation{
+        padding: 1rem;
+    }
+    .localisation__nationale, .localisation__locale{
+        flex-wrap: wrap;
+        gap:1rem;
+        margin-top:0
+    }
+    .localisation__blocimg, .localisation__blocimg2, .localisation__content, .localisation__content2{
+        width: 100%;
+    }
+
+    /*WORKING*/
+    .working{
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+
+    .working__content, .working__carrousel{
+        width: 100%;
+    }
+
+    .working__links{
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    /*DESTINATION*/
+    .destination{
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap:1rem
+    }
+
+    .destination__content, .destination__img{
+        width: 100%;
+    }
+
+    .destination__content{
+        padding: 1rem;
+    }
+
+    .destination__img{
+        position: static;
+        transform: none;
+    }
+
+    /*CREATION*/
+    .creation{
+        flex-wrap: wrap;
+        gap:1rem;
+        padding: 1rem;
+    }
+
+    .creation__content, .creation__img{
+        width: 100%;
+    }
+
+    /*POINTS CLE*/
+    .pointscle{
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .pointscle__content, .pointscle__img{
+        width: 100%;
+    }
+
+    .cite{
+        padding: 1rem;
+    }
+
+    .video__buttons{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /*FORMULAIRE*/
+    .formulaire{
+        padding:1rem
+    }
+
+    .formulaire__content{
+        width: 100%;
+    }
+
+    /*FOOTER*/
+    .footer{
+        padding: 1rem;
+    }
+    .footer__content{
+        width: 100%;
+    }
+
+    .footer__menu{
+        flex-wrap: wrap;
+        gap: 0;
+        justify-content: start;
+        padding-inline-start: 0;
     }
 }
+
+/*TABLETTE*/
+@media (min-width: 32rem) and (max-width: 64rem){}

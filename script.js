@@ -177,3 +177,89 @@ document.addEventListener("DOMContentLoaded", function () {
         field.addEventListener("input", () => validateField(field));
     });
 });
+
+
+// Variables pour les éléments du menu
+const headerButton = document.getElementById('header-button');
+const headerCroix = document.getElementById('header-croix');
+const headerContent = document.getElementById('header-content');
+const menuLinks = document.querySelectorAll('.header__navigation.--mobile a');
+
+// Fonction pour ouvrir/fermer le menu
+function toggleMenu() {
+    // Vérifie si le menu est actuellement affiché
+    const isMenuOpen = headerContent.style.display === 'block';
+    
+    if (isMenuOpen) {
+        // Ferme le menu
+        headerContent.style.display = 'none';
+        document.body.style.overflow = ''; // Restaure le défilement du corps
+        headerButton.setAttribute('aria-expanded', 'false');
+        headerContent.setAttribute('aria-hidden', 'true');
+        headerButton.focus(); // Focus sur le bouton hamburger
+        trapFocus(false); // Retire le piège de focus
+    } else {
+        // Ouvre le menu
+        headerContent.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Désactive le défilement du corps
+        headerButton.setAttribute('aria-expanded', 'true');
+        headerContent.setAttribute('aria-hidden', 'false');
+        headerContent.querySelector('a').focus(); // Focus sur le premier élément du menu
+        trapFocus(true); // Bloque le focus à l'intérieur du menu
+    }
+}
+
+// Fonction pour fermer le menu lorsqu'un lien est cliqué
+function closeMenu() {
+    headerContent.style.display = 'none'; 
+    document.body.style.overflow = '';
+    headerButton.setAttribute('aria-expanded', 'false');
+    headerContent.setAttribute('aria-hidden', 'true');
+    headerButton.focus(); // Focus sur le bouton hamburger après fermeture
+    trapFocus(false); // Retire le piège de focus
+}
+
+// Fonction pour empêcher le focus de sortir du menu
+function trapFocus(shouldTrap) {
+    const focusableElements = headerContent.querySelectorAll('a, button');
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+    if (shouldTrap) {
+        headerContent.addEventListener('keydown', function(e) {
+            const isTabPressed = (e.key === 'Tab' || e.keyCode === 9);
+            if (!isTabPressed) return;
+
+            if (e.shiftKey) { // Shift + Tab
+                if (document.activeElement === firstFocusableElement) {
+                    lastFocusableElement.focus();
+                    e.preventDefault();
+                }
+            } else { // Tab
+                if (document.activeElement === lastFocusableElement) {
+                    firstFocusableElement.focus();
+                    e.preventDefault();
+                }
+            }
+        });
+    } else {
+        // Retirer l'écoute du focus lorsqu'on désactive le piège
+        headerContent.removeEventListener('keydown', trapFocus);
+    }
+}
+
+// Écouteurs d'événements pour ouvrir et fermer le menu
+headerButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    toggleMenu();
+});
+
+headerCroix.addEventListener('click', (event) => {
+    event.preventDefault();
+    toggleMenu();
+});
+
+// Ajout d'écouteurs pour chaque lien du menu pour fermer le menu quand un lien est cliqué
+menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+});
