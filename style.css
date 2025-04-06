@@ -620,10 +620,10 @@ form{
 
 /*MOBILE*/
 @media (max-width: 32rem) {
-    h1{font-size: 1.8em;}
-    h2{font-size: 1.7em;}
-    h3{font-size: 1.6em;}
-    h4{font-size: 1.5em;}
+    h1{font-size: 1.6em;}
+    h2{font-size: 1.5em;}
+    h3{font-size: 1.4em;}
+    h4{font-size: 1.3em;}
     body{
         line-height: 1.5;
         position: relative;
@@ -631,6 +631,10 @@ form{
     }
     h3, p, li {
         margin-bottom: 1.7rem;
+    }
+
+    .evitement{
+        padding: 1rem 1.5rem;
     }
 
     .--button {
@@ -723,8 +727,9 @@ form{
 
     /*INTRO*/
     .intro__content{
-        width: 95%;
+        width: 90%;
         height: 100%;
+        padding: 1rem;
     }
 
     .intro__title{
@@ -732,7 +737,7 @@ form{
     }
 
     .intro__link{
-        font-size: 1.3em;
+        font-size: 1em;
     }
 
     /*LIEU*/
