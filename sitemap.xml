@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://www.tesite.com/index.html</loc> <!-- Remplace par l'URL de ton site -->
+        <lastmod>2025-04-11</lastmod> <!-- Date de la dernière modification de la page -->
+        <changefreq>daily</changefreq> <!-- Fréquence de mise à jour du contenu -->
+        <priority>1.0</priority> <!-- Priorité de la page par rapport aux autres pages du site -->
+    </url>
+</urlset>

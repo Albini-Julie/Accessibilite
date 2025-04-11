@@ -219,23 +219,28 @@ function closeMenu() {
     trapFocus(false); // Retire le piège de focus
 }
 
-// Fonction pour empêcher le focus de sortir du menu
+// Fonction pour empêcher le focus de sortir du menu et mettre le focus sur la croix
 function trapFocus(shouldTrap) {
+    const headerContent = document.getElementById('header-content');
     const focusableElements = headerContent.querySelectorAll('a, button');
     const firstFocusableElement = focusableElements[0];
     const lastFocusableElement = focusableElements[focusableElements.length - 1];
+    const closeButton = document.getElementById('header-croix'); // Bouton de fermeture
 
     if (shouldTrap) {
+        // Mettre le focus sur la croix dès que le piège est activé
+        closeButton.focus(); 
+
         headerContent.addEventListener('keydown', function(e) {
             const isTabPressed = (e.key === 'Tab' || e.keyCode === 9);
             if (!isTabPressed) return;
 
-            if (e.shiftKey) { // Shift + Tab
+            if (e.shiftKey) {
                 if (document.activeElement === firstFocusableElement) {
                     lastFocusableElement.focus();
                     e.preventDefault();
                 }
-            } else { // Tab
+            } else { 
                 if (document.activeElement === lastFocusableElement) {
                     firstFocusableElement.focus();
                     e.preventDefault();
@@ -263,3 +268,33 @@ headerCroix.addEventListener('click', (event) => {
 menuLinks.forEach(link => {
     link.addEventListener('click', closeMenu);
 });
+
+
+
+
+// Message de réussite de l'envoie du formulaire
+const form = document.getElementById('contactForm');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Empêche l'envoi réel
+
+        const requiredFields = form.querySelectorAll('[required]');
+        let formValid = true;
+
+        requiredFields.forEach(field => {
+            const errorId = field.getAttribute('aria-describedby');
+            const errorElem = errorId ? document.getElementById(errorId) : null;
+
+            if (!field.value.trim()) {
+                formValid = false;
+                if (errorElem) errorElem.textContent = "Ce champ est obligatoire.";
+            } else {
+                if (errorElem) errorElem.textContent = "";
+            }
+        });
+
+        if (formValid) {
+            alert("✅ Votre message a bien été envoyé !");
+            form.reset();
+        }
+    });
